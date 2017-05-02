@@ -201,7 +201,7 @@ static BOOL quiet = NO;
     task.standardOutput = pipe;
     NSFileHandle *fh = pipe.fileHandleForReading;
     [task launch];
-    [task waitUntilExit];
+    // [task waitUntilExit];
     NSData *data = [fh readDataToEndOfFile];
     return [[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding] stringByTrimmingCharactersInSet:[NSCharacterSet newlineCharacterSet]];
 }
